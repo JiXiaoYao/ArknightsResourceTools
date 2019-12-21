@@ -1,0 +1,32 @@
+﻿<Window x:Class="ArknightsResourceTools_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArknightsResourceTools_GUI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="1079" Width="1918.5" Icon="app_icon.png">
+    <Window.Background>
+        <ImageBrush ImageSource="background.jpg"/>
+    </Window.Background>
+    <Grid x:Name="Grid" Background="#82B89898">
+        <Menu x:Name="Menu" Height="40" VerticalAlignment="Top">
+            <MenuItem Header="资源解包" Width="59" Height="40">
+                <Button x:Name="GetSrc" Content="选择源文件夹" Width="120" Click="GetSrc_Click"/>
+                <Button x:Name="SetOutPutPath" Content="选择输出文件夹" Width="120" Click="SetOutPutPath_Click"/>
+            </MenuItem>
+            <MenuItem Header="Alpha通道合成" Width="95" Height="40">
+                <Button x:Name="SelectSrcPath" Content="选择图片所在文件夹" Width="120" Click="SelectSrcPath_Click"/>
+            </MenuItem>
+            <MenuItem Header="执行" Width="40" Height="40">
+                <Button x:Name="ResourcesRelease" Content="执行解包" Width="120" Click="ResourcesRelease_Click"/>
+                <Button x:Name="AlphaChannelSynthesis" Content="执行Alpha通道合成" Width="120" Click="AlphaChannelSynthesis_Click"/>
+            </MenuItem>
+            <MenuItem x:Name="ChannelSynthesis" Header="直接进行Alpha合成" IsEnabled="False" Width="122" Height="40" Click="ChannelSynthesis_Click"/>
+            <MenuItem x:Name="Cancel" Header="Cancel" IsEnabled="False" Width="53" Click="Cancel_Click" Height="40"/>
+        </Menu>
+        <TextBox x:Name="OutPutBox" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="False" AcceptsTab="True" 
+                 Margin="0,40" TextWrapping="Wrap" Background="#00000000" Foreground="White" FontSize="24" ScrollViewer.CanContentScroll="True" BorderBrush="#00000000" BorderThickness="0"/>
+
+    </Grid>
+</Window>

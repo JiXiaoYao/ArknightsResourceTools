@@ -12,6 +12,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesReleaseTool-GUI", 
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ChannelSynthesis", "ChannelSynthesis\ChannelSynthesis.pyproj", "{88A43737-E651-4DE6-A0B0-F9DFDBAF9951}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArknightsResourceTools-GUI", "ArknightsResourceTools-GUI\ArknightsResourceTools-GUI.csproj", "{4740280F-FA5C-44F6-8E80-3B07DE36A66A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9CE5072F-2784-4770-88D6-C1970A5B75D8} = {9CE5072F-2784-4770-88D6-C1970A5B75D8}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,6 +33,10 @@ Global
 		{E7810E8A-2C17-4585-9A8D-A446DD867D12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88A43737-E651-4DE6-A0B0-F9DFDBAF9951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88A43737-E651-4DE6-A0B0-F9DFDBAF9951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4740280F-FA5C-44F6-8E80-3B07DE36A66A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4740280F-FA5C-44F6-8E80-3B07DE36A66A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4740280F-FA5C-44F6-8E80-3B07DE36A66A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4740280F-FA5C-44F6-8E80-3B07DE36A66A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

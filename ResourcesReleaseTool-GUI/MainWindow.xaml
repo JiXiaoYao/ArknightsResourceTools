@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResourcesReleaseTool_GUI"
         mc:Ignorable="d"
-        Title="明日方舟资源解包软件" Height="648" Width="960">
+        Title="明日方舟资源解包软件" Height="648" Width="960" Icon="app_icon.png">
     <Window.Background>
-        <ImageBrush ImageSource="1032074.jpg"/>
+        <ImageBrush ImageSource="background.jpg"/>
     </Window.Background>
     <Grid>
         <Menu Height="40" VerticalAlignment="Top">

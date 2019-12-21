@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,7 @@ namespace ResourcesReleaseTool_GUI
         Task task;
         string InPutPath = "";
         string OutPutPath = "";
+        Bitmap bitmap;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,7 +36,12 @@ namespace ResourcesReleaseTool_GUI
             double y = SystemParameters.WorkArea.Height;//得到屏幕工作区域高度
             this.MaxHeight = y;
             this.MaxWidth = x;
-            this.Width = ((y * 0.75) / 27) * 40;//设置窗体宽度
+            bitmap = new Bitmap("background.jpg");
+            this.Background = new ImageBrush
+            {
+                ImageSource = new BitmapImage(new Uri(System.IO.Path.GetFullPath("background.jpg")))
+            };
+            this.Width = ((y * 0.75) / bitmap.Height) * bitmap.Width;//设置窗体宽度
             this.Height = y * 0.75;//设置窗体高度
             this.SizeChanged += new System.Windows.SizeChangedEventHandler(ReSizeEventArgs);
             this.Closing += Window_Closing;
@@ -43,10 +50,9 @@ namespace ResourcesReleaseTool_GUI
         public void ReSizeEventArgs(object sender, System.Windows.SizeChangedEventArgs e)
         {
             if (e.WidthChanged)
-                this.Height = ((this.Width) / 40) * 27;
+                this.Height = ((this.Width) / bitmap.Width) * bitmap.Height;
             if (e.HeightChanged)
-                this.Width = ((this.Height) / 27) * 40;
-
+                this.Width = ((this.Height) / bitmap.Height) * bitmap.Width;
             //else if (e.NewSize.Height != e.PreviousSize.Height)
             //    this.Width = ((this.Height) / 27) * 40;
             //else if (e.NewSize.Width != e.PreviousSize.Width)
@@ -123,7 +129,8 @@ namespace ResourcesReleaseTool_GUI
                     {
                         OutPutLabel.Content = $"{Environment.NewLine}核心程序已退出" + (string)OutPutLabel.Content;
                     }));
-                    Process.Start($"{OutPutPath}/Photo");
+                    if (Directory.Exists($"{OutPutPath}/Photo"))
+                        Process.Start($"{OutPutPath}/Photo");
 
                 });
                 task.Start();
