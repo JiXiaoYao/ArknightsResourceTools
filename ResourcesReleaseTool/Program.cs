@@ -63,7 +63,8 @@ namespace ResourcesReleaseTool
                 while (Works != AllWorks)
                 {
                     Thread.Sleep(1000);
-                    Console.SetCursorPosition(0, Console.CursorTop - 1);
+                    if (parameter[2] != "1")
+                        Console.SetCursorPosition(0, Console.CursorTop - 1);
                     Console.WriteLine($"完成:{((Works / AllWorks) * 100).ToString("00.00")}%");
                     //GC.Collect();
                 }
@@ -80,7 +81,7 @@ namespace ResourcesReleaseTool
                         Texture2D photo = (Texture2D)texture2D.Value;
                         var converter = new Texture2DConverter(photo).ConvertToBitmap(true);
                         converter.Save(OutPut + "/Photo/" + photo.m_Name + ".png");
-                        
+
                     }
                     catch (Exception e)
                     {
@@ -97,12 +98,15 @@ namespace ResourcesReleaseTool
             Works = AllWorks;
             task.Wait();
             Console.WriteLine($"处理完成,成功处理{Directory.GetFiles(OutPut + "/Photo/").Length}张图片,{Directory.GetFiles(OutPut + "/Txtout/").Length}段文本");
-            Console.WriteLine("按任意键退出........");
-            Console.ReadKey();
+            if (parameter[2] == "2")
+            {
+                Console.ReadKey();
+                Console.WriteLine("按任意键退出........");
+            }
         }
         public static string[] GetArgs(string[] args)
         {
-            string[] Info = new string[2] { "2", "2" };
+            string[] Info = new string[3] { "2", "2", "2" };
             for (int i = 0; i < args.Length; i++)
             {
                 if (args[i].First() == '-')
@@ -132,6 +136,8 @@ namespace ResourcesReleaseTool
                             Info[1] = "0";
                         i = i + 1;
                     }
+                    else if (args[i][1] == 't')
+                        Info[2] = "1";
             }
             return Info;
         }
