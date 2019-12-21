@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArknightsResourceTools-GUI", "ArknightsResourceTools-GUI\ArknightsResourceTools-GUI.csproj", "{61BE69F2-4966-4F7C-ACDB-9E97229A844D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ResourcesReleaseTool", "ResourcesReleaseTool\ResourcesReleaseTool.csproj", "{9CE5072F-2784-4770-88D6-C1970A5B75D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{61BE69F2-4966-4F7C-ACDB-9E97229A844D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{61BE69F2-4966-4F7C-ACDB-9E97229A844D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{61BE69F2-4966-4F7C-ACDB-9E97229A844D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{61BE69F2-4966-4F7C-ACDB-9E97229A844D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE5072F-2784-4770-88D6-C1970A5B75D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE5072F-2784-4770-88D6-C1970A5B75D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE5072F-2784-4770-88D6-C1970A5B75D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE5072F-2784-4770-88D6-C1970A5B75D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
