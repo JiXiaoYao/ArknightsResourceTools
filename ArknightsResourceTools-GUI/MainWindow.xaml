@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArknightsResourceTools_GUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1079" Width="1918.5" Icon="app_icon.png">
+        Title="解包工具集合" Height="1079" Width="1918.5" Icon="app_icon.png">
     <Window.Background>
         <ImageBrush ImageSource="background.jpg"/>
     </Window.Background>
@@ -24,6 +24,7 @@
             </MenuItem>
             <MenuItem x:Name="ChannelSynthesis" Header="直接进行Alpha合成" IsEnabled="False" Width="122" Height="40" Click="ChannelSynthesis_Click"/>
             <MenuItem x:Name="Cancel" Header="Cancel" IsEnabled="False" Width="53" Click="Cancel_Click" Height="40"/>
+            <MenuItem Width="107" Header="Help&amp;About" Click="MenuItem_Click"/>
         </Menu>
         <TextBox x:Name="OutPutBox" ScrollViewer.VerticalScrollBarVisibility="Auto" AcceptsReturn="False" AcceptsTab="True" 
                  Margin="0,40" TextWrapping="Wrap" Background="#00000000" Foreground="White" FontSize="24" ScrollViewer.CanContentScroll="True" BorderBrush="#00000000" BorderThickness="0"/>

@@ -298,5 +298,11 @@ namespace ArknightsResourceTools_GUI
             else
                 MessageBox.Show("已有项目在运行，请等待");
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Info info = new Info();
+            info.ShowDialog();
+        }
     }
 }

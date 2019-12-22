@@ -11,10 +11,11 @@
     </Window.Background>
     <Grid>
         <Menu Height="40" VerticalAlignment="Top">
-            <Button x:Name="___无名称_" Width="130" Click="Button_Click" Height="30" Content="点击载入源文件夹"/>
-            <Button Content="点击载入输出文件夹" Height="30" Width="137" Click="Button_Click_1"/>
-            <Button Content="开始解包" Height="30" Width="128" Click="Button_Click_2"/>
-            <Button x:Name="Cancel" Content="取消操作" Width="105" Height="30" IsEnabled="False" Click="Cancel_Click"/>
+            <MenuItem x:Name="___无名称_" Width="111" Click="Button_Click" Height="40" Header="点击载入源文件夹"/>
+            <MenuItem Header="点击载入输出文件夹" Height="36" Width="125" Click="Button_Click_1"/>
+            <MenuItem Header="开始解包" Height="36" Width="59" Click="Button_Click_2"/>
+            <MenuItem x:Name="Cancel" Header="取消操作" Width="59" Height="36" IsEnabled="False" Click="Cancel_Click"/>
+            <MenuItem Width="88" Header="Help&amp;About" Click="MenuItem_Click"></MenuItem>
         </Menu>
         <Label x:Name="OutPutLabel" Content="请先载入文件夹" Margin="0,40,0,0" RenderTransformOrigin="0.508,0.493" Background="#7FB1BDB3" Foreground="White"/>
     </Grid>

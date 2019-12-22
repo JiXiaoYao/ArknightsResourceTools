@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AssetStudio">
       <HintPath>..\..\..\..\Desktop\AssetStudio.x64.v0.13.25\AssetStudio.dll</HintPath>
@@ -62,6 +65,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app_icon.ico" />
     <Content Include="PVRTexLib.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
