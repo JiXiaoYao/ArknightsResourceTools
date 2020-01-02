@@ -49,6 +49,8 @@ namespace ResourcesReleaseTool
                 Directory.CreateDirectory(OutPut + "/Photo");
             if (!Directory.Exists(OutPut + "/Txtout"))
                 Directory.CreateDirectory(OutPut + "/Txtout");
+            if (!Directory.Exists(OutPut + "/Sound"))
+                Directory.CreateDirectory(OutPut + "/Sound");
             Console.WriteLine("开始处理数据");
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Red;
@@ -93,11 +95,32 @@ namespace ResourcesReleaseTool
                     TextAsset Text = ((TextAsset)textasset.Value);
                     File.WriteAllText(OutPut + "/Txtout/" + asset.fileName + "." + Text.m_Name + ".txt", Encoding.UTF8.GetString(Text.m_Script));
                 }
+                foreach (var soundasset in asset.Objects.Where(D => D.Value.type == ClassIDType.AudioClip).ToArray())
+                {
+                    AudioClip audioClip = (AudioClip)soundasset.Value;
+                    var m_AudioData = audioClip.m_AudioData.Value;
+                    var converter = new AudioClipConverter(audioClip);
+                    if (!(m_AudioData == null || m_AudioData.Length == 0))
+                    {
+                        if (converter.IsFMODSupport)
+                        {
+                            var exportFullName = OutPut + "/Sound/" + asset.fileName + "." + audioClip.m_Name + ".wav";
+                            var buffer = converter.ConvertToWav();
+                            if (buffer != null)
+                                File.WriteAllBytes(exportFullName, buffer);
+                        }
+                        else
+                        {
+                            var exportFullName = OutPut + "/Sound/" + asset.fileName + "." + audioClip.m_Name + ".wav";
+                            File.WriteAllBytes(exportFullName, m_AudioData);
+                        }
+                    }
+                }
                 Works++;
             });
             Works = AllWorks;
             task.Wait();
-            Console.WriteLine($"处理完成,成功处理{Directory.GetFiles(OutPut + "/Photo/").Length}张图片,{Directory.GetFiles(OutPut + "/Txtout/").Length}段文本");
+            Console.WriteLine($"处理完成,成功处理{Directory.GetFiles(OutPut + "/Photo/").Length}张图片,{Directory.GetFiles(OutPut + "/Txtout/").Length}段文本,{Directory.GetFiles(OutPut + "/Sound/").Length}个音频");
             if (parameter[2] == "2")
             {
                 Console.ReadKey();

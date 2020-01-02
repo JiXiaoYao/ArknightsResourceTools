@@ -9,7 +9,7 @@
     <Window.Background>
         <ImageBrush ImageSource="background.jpg"/>
     </Window.Background>
-    <Grid x:Name="Grid" Background="#82B89898">
+    <Grid x:Name="Grid" Background="#7FB1BDB3">
         <Menu x:Name="Menu" Height="40" VerticalAlignment="Top">
             <MenuItem Header="资源解包" Width="59" Height="40">
                 <Button x:Name="GetSrc" Content="选择源文件夹" Width="120" Click="GetSrc_Click"/>

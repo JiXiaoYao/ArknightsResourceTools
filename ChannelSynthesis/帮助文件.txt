@@ -1,0 +1,6 @@
+ChannelSynthesis是Python编写的并行Alpha合成工具
+ChannelSynthesisCPU使用的是Numpy进行主要运算，已经编译成脱离环境的exe文件（这个压缩包没有，请去Github下载ChannelSynthesisByCPU.zip，或者自行编译）
+ChannelSynthesisGPU-CUDA是使用CUPY代替Numpy的GPU加速处理程序，由于使用了CUPY的GPU-CUDA加速，无法编译为脱离环境的程序，所以这个程序仅供能够自主安装Python
+并且能够自主配置所需python库，以及为GPU安装CUDA的专业人士研究。但是具有重大教育意义。
+
+项目地址：https://github.com/JiXiaoYao/ArknightsResourceTools
